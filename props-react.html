@@ -1,0 +1,18 @@
+<script type="text/jsx">
+    cons container =document .getElementById("root");
+    cons root = ReactDOM.ceateRoot(container);
+
+    function Header{
+        return (<h1> Belajar React Bersama {props,text} </h1>);
+    }
+
+    function HomePage(){
+        return(
+            <div>
+                <Header text="kamu"/>
+                <Header text="Mahasiswa"/>
+            </div>
+        )
+    }
+    root.render(<HomePage />);
+</script>

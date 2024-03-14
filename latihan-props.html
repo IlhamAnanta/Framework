@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const ProductCard = (props) => {
+            return (
+                <div style={{ border: '1px solid #ccc', borderRadius: '5px', padding: '10px', margin: '10px', width: '300px' }}>
+                    <img src={props.imageUrl} alt={props.productName} style={{ width: '100%', marginBottom: '10px' }} />
+                    <h3>{props.productName}</h3>
+                    <p>Price: ${props.price}</p>
+                </div>
+            );
+        };
+
+        const App = () => {
+            return (
+                <div>
+                    <h1>Product Cards</h1>
+                    <ProductCard 
+                        productName="Asus TUF"
+                        price={50}
+                        imageUrl="https://www.itgaleri.com/wp-content/uploads/2023/02/ASUS-TUF-GAMING-A15-FA507RC-R735B7G-O1.jpg"
+                    />
+                    <ProductCard 
+                        productName="Rise Cooker"
+                        price={70}
+                        imageUrl="https://images.duniamasak.com/images/11902/rice-cooker-sanken-sj-150-23015_521.jpeg"
+                    />
+                    <ProductCard 
+                        productName="Civic Turbo"
+                        price={100}
+                        imageUrl="https://www.jualmobilbaru.com/images/mdl/3RPtDt8iCbrw2Dn084c4Daiowonr81.png"
+                    />
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
